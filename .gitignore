@@ -3,3 +3,4 @@ Add these lines at the end:
 ```
 .env
 config.json
+logs/
