@@ -1,0 +1,642 @@
+2026-01-04 04:47:06,294 - INFO - ======================================================================
+2026-01-04 04:47:06,295 - INFO - Sales Agent Starting...
+2026-01-04 04:47:06,295 - INFO - Configuration: {
+  "max_retries": 3,
+  "retry_delay": 2,
+  "research_depth": "standard",
+  "email_tone": "professional",
+  "max_leads_per_run": 50
+}
+2026-01-04 04:47:06,295 - INFO - ======================================================================
+2026-01-04 04:47:06,295 - INFO - Connecting to Google Sheets...
+2026-01-04 04:47:06,384 - INFO - Successfully authorized with Google
+2026-01-04 04:47:06,385 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 04:47:06,385 - INFO - Listing all accessible spreadsheets:
+2026-01-04 04:47:09,193 - INFO -   - 'SalesLeads'
+2026-01-04 04:47:09,210 - INFO - Attempting to open the sheet...
+2026-01-04 04:47:09,990 - INFO - Successfully connected to sheet
+2026-01-04 04:47:10,221 - INFO - Found 4 leads to process
+2026-01-04 04:47:10,221 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 04:47:10,221 - INFO - Row 2: Already processed, skipping
+2026-01-04 04:47:10,222 - INFO - 
+--- Processing Row 3 ---
+2026-01-04 04:47:10,222 - INFO - Row 3: Already processed, skipping
+2026-01-04 04:47:10,222 - INFO - 
+--- Processing Row 4 ---
+2026-01-04 04:47:10,222 - INFO - Row 4: Already processed, skipping
+2026-01-04 04:47:10,223 - INFO - 
+--- Processing Row 5 ---
+2026-01-04 04:47:10,223 - INFO - Row 5: Already processed, skipping
+2026-01-04 04:47:10,223 - INFO - 
+======================================================================
+2026-01-04 04:47:10,223 - INFO - Sales Agent Finished!
+2026-01-04 04:47:10,224 - INFO - Summary: Processed=0, Skipped=4, Errors=0
+2026-01-04 04:47:10,224 - INFO - ======================================================================
+2026-01-04 04:55:12,509 - INFO - ======================================================================
+2026-01-04 04:55:12,510 - INFO - Sales Agent Starting...
+2026-01-04 04:55:12,511 - INFO - Configuration: {
+  "max_retries": 3,
+  "retry_delay": 2,
+  "research_depth": "standard",
+  "email_tone": "professional",
+  "max_leads_per_run": 50
+}
+2026-01-04 04:55:12,511 - INFO - ======================================================================
+2026-01-04 04:55:12,512 - INFO - Connecting to Google Sheets...
+2026-01-04 04:55:12,726 - INFO - Successfully authorized with Google
+2026-01-04 04:55:12,729 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 04:55:12,731 - INFO - Listing all accessible spreadsheets:
+2026-01-04 04:55:15,783 - INFO -   - 'SalesLeads'
+2026-01-04 04:55:15,783 - INFO - Attempting to open the sheet...
+2026-01-04 04:55:16,791 - INFO - Successfully connected to sheet
+2026-01-04 04:55:17,007 - INFO - Found 4 leads to process
+2026-01-04 04:55:17,007 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 04:55:17,007 - INFO - Processing: shailesh Hon from TechScoer
+2026-01-04 04:55:17,008 - INFO - Researching company: TechScoer
+2026-01-04 04:55:27,633 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 04:55:27,647 - INFO - Research completed for TechScoer
+2026-01-04 04:55:27,647 - INFO - Generating email for shailesh Hon
+2026-01-04 04:55:33,688 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 04:55:33,689 - INFO - Email generated successfully for shailesh Hon
+2026-01-04 04:55:36,493 - INFO - 
+--- Processing Row 3 ---
+2026-01-04 04:55:36,493 - INFO - Processing: John Smith from Anthropic
+2026-01-04 04:55:36,494 - INFO - Researching company: Anthropic
+2026-01-04 04:55:46,786 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 04:55:46,788 - INFO - Research completed for Anthropic
+2026-01-04 04:55:46,788 - INFO - Generating email for John Smith
+2026-01-04 04:55:53,150 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 04:55:53,156 - INFO - Email generated successfully for John Smith
+2026-01-04 04:55:55,663 - INFO - 
+--- Processing Row 4 ---
+2026-01-04 04:55:55,663 - INFO - Processing: Sarah Chen from Salesforce
+2026-01-04 04:55:55,663 - INFO - Researching company: Salesforce
+2026-01-04 04:56:04,995 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 04:56:04,997 - INFO - Research completed for Salesforce
+2026-01-04 04:56:04,997 - INFO - Generating email for Sarah Chen
+2026-01-04 04:56:11,045 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 04:56:11,047 - INFO - Email generated successfully for Sarah Chen
+2026-01-04 04:56:13,544 - INFO - 
+--- Processing Row 5 ---
+2026-01-04 04:56:13,544 - INFO - Processing: Michael Rodriguez from HubSpot
+2026-01-04 04:56:13,544 - INFO - Researching company: HubSpot
+2026-01-04 04:56:23,029 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 04:56:23,031 - INFO - Research completed for HubSpot
+2026-01-04 04:56:23,032 - INFO - Generating email for Michael Rodriguez
+2026-01-04 04:56:29,274 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 04:56:29,280 - INFO - Email generated successfully for Michael Rodriguez
+2026-01-04 04:56:31,793 - INFO - 
+======================================================================
+2026-01-04 04:56:31,793 - INFO - Sales Agent Finished!
+2026-01-04 04:56:31,793 - INFO - Summary: Processed=4, Skipped=0, Errors=0
+2026-01-04 04:56:31,793 - INFO - ======================================================================
+2026-01-04 05:02:09,947 - INFO - ======================================================================
+2026-01-04 05:02:09,949 - INFO - Sales Agent Starting...
+2026-01-04 05:02:09,950 - INFO - Configuration: {
+  "max_retries": 3,
+  "retry_delay": 2,
+  "research_depth": "standard",
+  "email_tone": "professional",
+  "max_leads_per_run": 50
+}
+2026-01-04 05:02:09,950 - INFO - ======================================================================
+2026-01-04 05:02:09,951 - INFO - Connecting to Google Sheets...
+2026-01-04 05:02:10,032 - INFO - Successfully authorized with Google
+2026-01-04 05:02:10,033 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 05:02:10,033 - INFO - Listing all accessible spreadsheets:
+2026-01-04 05:02:12,958 - INFO -   - 'SalesLeads'
+2026-01-04 05:02:12,959 - INFO - Attempting to open the sheet...
+2026-01-04 05:02:13,749 - INFO - Successfully connected to sheet
+2026-01-04 05:02:14,414 - INFO - Found 4 leads to process
+2026-01-04 05:02:14,414 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 05:02:14,414 - INFO - Row 2: Already processed, skipping
+2026-01-04 05:02:14,415 - INFO - 
+--- Processing Row 3 ---
+2026-01-04 05:02:14,415 - INFO - Row 3: Already processed, skipping
+2026-01-04 05:02:14,416 - INFO - 
+--- Processing Row 4 ---
+2026-01-04 05:02:14,416 - INFO - Row 4: Already processed, skipping
+2026-01-04 05:02:14,417 - INFO - 
+--- Processing Row 5 ---
+2026-01-04 05:02:14,417 - INFO - Row 5: Already processed, skipping
+2026-01-04 05:02:14,417 - INFO - 
+======================================================================
+2026-01-04 05:02:14,418 - INFO - Sales Agent Finished!
+2026-01-04 05:02:14,418 - INFO - Summary: Processed=0, Skipped=4, Errors=0
+2026-01-04 05:02:14,419 - INFO - ======================================================================
+2026-01-04 05:02:49,923 - INFO - ======================================================================
+2026-01-04 05:02:49,924 - INFO - Sales Agent Starting...
+2026-01-04 05:02:49,924 - INFO - Configuration: {
+  "max_retries": 3,
+  "retry_delay": 2,
+  "research_depth": "standard",
+  "email_tone": "professional",
+  "max_leads_per_run": 50
+}
+2026-01-04 05:02:49,924 - INFO - ======================================================================
+2026-01-04 05:02:49,925 - INFO - Connecting to Google Sheets...
+2026-01-04 05:02:49,970 - INFO - Successfully authorized with Google
+2026-01-04 05:02:49,971 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 05:02:49,971 - INFO - Listing all accessible spreadsheets:
+2026-01-04 05:02:52,106 - INFO -   - 'SalesLeads'
+2026-01-04 05:02:52,107 - INFO - Attempting to open the sheet...
+2026-01-04 05:02:53,377 - INFO - Successfully connected to sheet
+2026-01-04 05:02:53,583 - INFO - Found 4 leads to process
+2026-01-04 05:02:53,584 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 05:02:53,585 - INFO - Processing: shailesh Hon from TechScoer
+2026-01-04 05:02:53,586 - INFO - Researching company: TechScoer
+2026-01-04 05:03:05,060 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:03:05,079 - INFO - Research completed for TechScoer
+2026-01-04 05:03:05,080 - INFO - Generating email for shailesh Hon
+2026-01-04 05:03:11,699 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:03:11,702 - INFO - Email generated successfully for shailesh Hon
+2026-01-04 05:03:14,682 - INFO - 
+--- Processing Row 3 ---
+2026-01-04 05:03:14,683 - INFO - Processing: John Smith from Anthropic
+2026-01-04 05:03:14,684 - INFO - Researching company: Anthropic
+2026-01-04 05:03:23,360 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:03:23,364 - INFO - Research completed for Anthropic
+2026-01-04 05:03:23,365 - INFO - Generating email for John Smith
+2026-01-04 05:03:30,526 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:03:30,528 - INFO - Email generated successfully for John Smith
+2026-01-04 05:03:33,521 - INFO - 
+--- Processing Row 4 ---
+2026-01-04 05:03:33,521 - INFO - Processing: Sarah Chen from Salesforce
+2026-01-04 05:03:33,521 - INFO - Researching company: Salesforce
+2026-01-04 05:03:43,521 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:03:43,525 - INFO - Research completed for Salesforce
+2026-01-04 05:03:43,527 - INFO - Generating email for Sarah Chen
+2026-01-04 05:03:49,836 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:03:49,837 - INFO - Email generated successfully for Sarah Chen
+2026-01-04 05:03:52,785 - INFO - 
+--- Processing Row 5 ---
+2026-01-04 05:03:52,786 - INFO - Processing: Michael Rodriguez from HubSpot
+2026-01-04 05:03:52,786 - INFO - Researching company: HubSpot
+2026-01-04 05:04:01,443 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:04:01,447 - INFO - Research completed for HubSpot
+2026-01-04 05:04:01,448 - INFO - Generating email for Michael Rodriguez
+2026-01-04 05:04:07,777 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:04:07,778 - INFO - Email generated successfully for Michael Rodriguez
+2026-01-04 05:04:10,275 - INFO - 
+======================================================================
+2026-01-04 05:04:10,275 - INFO - Sales Agent Finished!
+2026-01-04 05:04:10,275 - INFO - Summary: Processed=4, Skipped=0, Errors=0
+2026-01-04 05:04:10,276 - INFO - ======================================================================
+2026-01-04 05:11:41,313 - INFO - Configuration loaded from config.json
+2026-01-04 05:11:41,852 - INFO - ======================================================================
+2026-01-04 05:11:41,852 - INFO - Sales Agent Starting...
+2026-01-04 05:11:41,853 - INFO - Configuration loaded
+2026-01-04 05:11:41,853 - INFO - Research enabled: True
+2026-01-04 05:11:41,853 - INFO - Email generation enabled: True
+2026-01-04 05:11:41,854 - INFO - Email template: default
+2026-01-04 05:11:41,854 - INFO - Email tone: professional
+2026-01-04 05:11:41,854 - INFO - ======================================================================
+2026-01-04 05:11:41,855 - INFO - Connecting to Google Sheets...
+2026-01-04 05:11:41,855 - ERROR - Failed to connect to Google Sheets: [Errno 2] No such file or directory: 'C:/Users/shail/OneDrive/Desktop/Crendential/sales-agent-project-482819-e387ce8a550f.json'
+2026-01-04 05:11:41,855 - ERROR - Failed to connect to sheet. Aborting. Error: [Errno 2] No such file or directory: 'C:/Users/shail/OneDrive/Desktop/Crendential/sales-agent-project-482819-e387ce8a550f.json'
+2026-01-04 05:13:45,902 - INFO - Configuration loaded from config.json
+2026-01-04 05:13:46,514 - INFO - ======================================================================
+2026-01-04 05:13:46,516 - INFO - Sales Agent Starting...
+2026-01-04 05:13:46,516 - INFO - Configuration loaded
+2026-01-04 05:13:46,516 - INFO - Research enabled: True
+2026-01-04 05:13:46,517 - INFO - Email generation enabled: True
+2026-01-04 05:13:46,517 - INFO - Email template: default
+2026-01-04 05:13:46,518 - INFO - Email tone: professional
+2026-01-04 05:13:46,519 - INFO - ======================================================================
+2026-01-04 05:13:46,519 - INFO - Connecting to Google Sheets...
+2026-01-04 05:13:46,612 - INFO - Successfully authorized with Google
+2026-01-04 05:13:46,612 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 05:13:49,245 - INFO - Successfully connected to sheet
+2026-01-04 05:13:49,477 - INFO - Found 8 total rows
+2026-01-04 05:13:49,479 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 05:13:49,481 - INFO - Row 2: Already processed, skipping
+2026-01-04 05:13:49,483 - INFO - 
+--- Processing Row 3 ---
+2026-01-04 05:13:49,484 - INFO - Row 3: Already processed, skipping
+2026-01-04 05:13:49,486 - INFO - 
+--- Processing Row 4 ---
+2026-01-04 05:13:49,488 - INFO - Row 4: Already processed, skipping
+2026-01-04 05:13:49,490 - INFO - 
+--- Processing Row 5 ---
+2026-01-04 05:13:49,492 - INFO - Row 5: Already processed, skipping
+2026-01-04 05:13:49,494 - INFO - 
+--- Processing Row 6 ---
+2026-01-04 05:13:49,496 - INFO - Processing: Robin hii from Tcshiad
+2026-01-04 05:13:49,498 - INFO - Researching company: Tcshiad
+2026-01-04 05:13:50,234 - WARNING - API call failed (attempt 1/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:13:52,873 - WARNING - API call failed (attempt 2/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:13:55,504 - WARNING - API call failed (attempt 3/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:13:55,506 - ERROR - API call failed after 3 attempts: 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:13:55,512 - WARNING - Search failed for query: Tcshiad company
+2026-01-04 05:13:56,153 - WARNING - API call failed (attempt 1/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:13:58,808 - WARNING - API call failed (attempt 2/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:01,463 - WARNING - API call failed (attempt 3/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:01,463 - ERROR - API call failed after 3 attempts: 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:01,465 - WARNING - Search failed for query: Tcshiad news recent
+2026-01-04 05:14:01,465 - INFO - Generating email for Robin hii
+2026-01-04 05:14:07,807 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:14:07,822 - INFO - Email generated successfully for Robin hii
+2026-01-04 05:14:10,420 - INFO - 
+--- Processing Row 7 ---
+2026-01-04 05:14:10,422 - INFO - Processing: Robin hii from Tcshiad
+2026-01-04 05:14:10,424 - INFO - Researching company: Tcshiad
+2026-01-04 05:14:11,074 - WARNING - API call failed (attempt 1/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:13,857 - WARNING - API call failed (attempt 2/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:16,571 - WARNING - API call failed (attempt 3/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:16,573 - ERROR - API call failed after 3 attempts: 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:16,580 - WARNING - Search failed for query: Tcshiad company
+2026-01-04 05:14:17,219 - WARNING - API call failed (attempt 1/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:19,856 - WARNING - API call failed (attempt 2/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:22,515 - WARNING - API call failed (attempt 3/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:22,515 - ERROR - API call failed after 3 attempts: 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:22,517 - WARNING - Search failed for query: Tcshiad news recent
+2026-01-04 05:14:22,517 - INFO - Generating email for Robin hii
+2026-01-04 05:14:28,932 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:14:28,933 - INFO - Email generated successfully for Robin hii
+2026-01-04 05:14:31,451 - INFO - 
+--- Processing Row 8 ---
+2026-01-04 05:14:31,451 - INFO - Processing: Robin hii from Tcshiad
+2026-01-04 05:14:31,451 - INFO - Researching company: Tcshiad
+2026-01-04 05:14:32,185 - WARNING - API call failed (attempt 1/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:34,818 - WARNING - API call failed (attempt 2/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:37,543 - WARNING - API call failed (attempt 3/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:37,543 - ERROR - API call failed after 3 attempts: 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:37,546 - WARNING - Search failed for query: Tcshiad company
+2026-01-04 05:14:38,272 - WARNING - API call failed (attempt 1/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:40,969 - WARNING - API call failed (attempt 2/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:43,851 - WARNING - API call failed (attempt 3/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:43,852 - ERROR - API call failed after 3 attempts: 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:43,853 - WARNING - Search failed for query: Tcshiad news recent
+2026-01-04 05:14:43,853 - INFO - Generating email for Robin hii
+2026-01-04 05:14:49,250 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:14:49,251 - INFO - Email generated successfully for Robin hii
+2026-01-04 05:14:51,752 - INFO - 
+--- Processing Row 9 ---
+2026-01-04 05:14:51,753 - INFO - Processing: Robin hii from Tcshiad
+2026-01-04 05:14:51,753 - INFO - Researching company: Tcshiad
+2026-01-04 05:14:52,381 - WARNING - API call failed (attempt 1/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:55,001 - WARNING - API call failed (attempt 2/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:57,698 - WARNING - API call failed (attempt 3/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:57,699 - ERROR - API call failed after 3 attempts: 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:14:57,700 - WARNING - Search failed for query: Tcshiad company
+2026-01-04 05:14:58,392 - WARNING - API call failed (attempt 1/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:15:01,067 - WARNING - API call failed (attempt 2/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:15:03,693 - WARNING - API call failed (attempt 3/3): 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:15:03,693 - ERROR - API call failed after 3 attempts: 403 Client Error: Forbidden for url: https://google.serper.dev/search
+2026-01-04 05:15:03,695 - WARNING - Search failed for query: Tcshiad news recent
+2026-01-04 05:15:03,695 - INFO - Generating email for Robin hii
+2026-01-04 05:15:09,515 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:15:09,519 - INFO - Email generated successfully for Robin hii
+2026-01-04 05:15:12,051 - INFO - 
+======================================================================
+2026-01-04 05:15:12,052 - INFO - Sales Agent Finished!
+2026-01-04 05:15:12,053 - INFO - Summary: Processed=4, Skipped=4, Errors=0
+2026-01-04 05:15:12,053 - INFO - ======================================================================
+2026-01-04 05:15:25,900 - INFO - Configuration loaded from config.json
+2026-01-04 05:15:26,420 - INFO - ======================================================================
+2026-01-04 05:15:26,420 - INFO - Sales Agent Starting...
+2026-01-04 05:15:26,421 - INFO - Configuration loaded
+2026-01-04 05:15:26,421 - INFO - Research enabled: True
+2026-01-04 05:15:26,422 - INFO - Email generation enabled: True
+2026-01-04 05:15:26,423 - INFO - Email template: default
+2026-01-04 05:15:26,423 - INFO - Email tone: professional
+2026-01-04 05:15:26,424 - INFO - ======================================================================
+2026-01-04 05:15:26,424 - INFO - Connecting to Google Sheets...
+2026-01-04 05:15:26,467 - INFO - Successfully authorized with Google
+2026-01-04 05:15:26,468 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 05:15:28,871 - INFO - Successfully connected to sheet
+2026-01-04 05:15:29,106 - INFO - Found 8 total rows
+2026-01-04 05:15:29,107 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 05:15:29,107 - INFO - Row 2: Already processed, skipping
+2026-01-04 05:15:29,108 - INFO - 
+--- Processing Row 3 ---
+2026-01-04 05:15:29,108 - INFO - Row 3: Already processed, skipping
+2026-01-04 05:15:29,109 - INFO - 
+--- Processing Row 4 ---
+2026-01-04 05:15:29,109 - INFO - Row 4: Already processed, skipping
+2026-01-04 05:15:29,109 - INFO - 
+--- Processing Row 5 ---
+2026-01-04 05:15:29,110 - INFO - Row 5: Already processed, skipping
+2026-01-04 05:15:29,110 - INFO - 
+--- Processing Row 6 ---
+2026-01-04 05:15:29,111 - INFO - Row 6: Already processed, skipping
+2026-01-04 05:15:29,112 - INFO - 
+--- Processing Row 7 ---
+2026-01-04 05:15:29,112 - INFO - Row 7: Already processed, skipping
+2026-01-04 05:15:29,113 - INFO - 
+--- Processing Row 8 ---
+2026-01-04 05:15:29,113 - INFO - Row 8: Already processed, skipping
+2026-01-04 05:15:29,114 - INFO - 
+--- Processing Row 9 ---
+2026-01-04 05:15:29,115 - INFO - Row 9: Already processed, skipping
+2026-01-04 05:15:29,115 - INFO - 
+======================================================================
+2026-01-04 05:15:29,116 - INFO - Sales Agent Finished!
+2026-01-04 05:15:29,117 - INFO - Summary: Processed=0, Skipped=8, Errors=0
+2026-01-04 05:15:29,118 - INFO - ======================================================================
+2026-01-04 05:16:11,618 - INFO - Configuration loaded from config.json
+2026-01-04 05:16:12,128 - INFO - ======================================================================
+2026-01-04 05:16:12,128 - INFO - Sales Agent Starting...
+2026-01-04 05:16:12,129 - INFO - Configuration loaded
+2026-01-04 05:16:12,129 - INFO - Research enabled: True
+2026-01-04 05:16:12,130 - INFO - Email generation enabled: True
+2026-01-04 05:16:12,130 - INFO - Email template: default
+2026-01-04 05:16:12,130 - INFO - Email tone: professional
+2026-01-04 05:16:12,131 - INFO - ======================================================================
+2026-01-04 05:16:12,131 - INFO - Connecting to Google Sheets...
+2026-01-04 05:16:12,176 - INFO - Successfully authorized with Google
+2026-01-04 05:16:12,177 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 05:16:14,887 - INFO - Successfully connected to sheet
+2026-01-04 05:16:15,091 - INFO - Found 6 total rows
+2026-01-04 05:16:15,092 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 05:16:15,094 - INFO - Row 2: Already processed, skipping
+2026-01-04 05:16:15,096 - INFO - 
+--- Processing Row 3 ---
+2026-01-04 05:16:15,097 - INFO - Row 3: Already processed, skipping
+2026-01-04 05:16:15,098 - INFO - 
+--- Processing Row 4 ---
+2026-01-04 05:16:15,099 - INFO - Row 4: Already processed, skipping
+2026-01-04 05:16:15,100 - INFO - 
+--- Processing Row 5 ---
+2026-01-04 05:16:15,101 - INFO - Row 5: Already processed, skipping
+2026-01-04 05:16:15,102 - INFO - 
+--- Processing Row 6 ---
+2026-01-04 05:16:15,103 - INFO - Processing: Robin hii from Tcshiad
+2026-01-04 05:16:15,104 - INFO - Researching company: Tcshiad
+2026-01-04 05:16:22,205 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:16:22,217 - INFO - Generating email for Robin hii
+2026-01-04 05:16:28,213 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:16:28,218 - INFO - Email generated successfully for Robin hii
+2026-01-04 05:16:30,774 - INFO - 
+--- Processing Row 7 ---
+2026-01-04 05:16:30,775 - INFO - Processing: Robin hii from Tcshiad
+2026-01-04 05:16:30,775 - INFO - Researching company: Tcshiad
+2026-01-04 05:16:38,736 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:16:38,739 - INFO - Generating email for Robin hii
+2026-01-04 05:16:45,348 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:16:45,353 - INFO - Email generated successfully for Robin hii
+2026-01-04 05:16:47,866 - INFO - 
+======================================================================
+2026-01-04 05:16:47,866 - INFO - Sales Agent Finished!
+2026-01-04 05:16:47,866 - INFO - Summary: Processed=2, Skipped=4, Errors=0
+2026-01-04 05:16:47,866 - INFO - ======================================================================
+2026-01-04 05:22:47,003 - INFO - Configuration loaded from config.json
+2026-01-04 05:22:47,716 - INFO - ======================================================================
+2026-01-04 05:22:47,717 - INFO - Sales Agent Starting...
+2026-01-04 05:22:47,717 - INFO - Configuration loaded
+2026-01-04 05:22:47,718 - INFO - Research enabled: True
+2026-01-04 05:22:47,718 - INFO - Email generation enabled: True
+2026-01-04 05:22:47,719 - INFO - Email template: brief
+2026-01-04 05:22:47,719 - INFO - Email tone: professional
+2026-01-04 05:22:47,720 - INFO - ======================================================================
+2026-01-04 05:22:47,720 - INFO - Connecting to Google Sheets...
+2026-01-04 05:22:47,789 - INFO - Successfully authorized with Google
+2026-01-04 05:22:47,791 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 05:22:50,598 - INFO - Successfully connected to sheet
+2026-01-04 05:22:50,836 - INFO - Found 1 total rows
+2026-01-04 05:22:50,838 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 05:22:50,839 - INFO - Processing: shailesh Hon from TechScoer
+2026-01-04 05:22:50,839 - INFO - Researching company: TechScoer
+2026-01-04 05:22:59,765 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:22:59,781 - INFO - Generating email for shailesh Hon
+2026-01-04 05:23:07,356 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:23:07,361 - INFO - Email generated successfully for shailesh Hon
+2026-01-04 05:23:09,921 - INFO - 
+======================================================================
+2026-01-04 05:23:09,921 - INFO - Sales Agent Finished!
+2026-01-04 05:23:09,922 - INFO - Summary: Processed=1, Skipped=0, Errors=0
+2026-01-04 05:23:09,922 - INFO - ======================================================================
+2026-01-04 05:26:01,794 - INFO - Configuration loaded from config.json
+2026-01-04 05:26:03,115 - INFO - ======================================================================
+2026-01-04 05:26:03,117 - INFO - Sales Agent Starting...
+2026-01-04 05:26:03,118 - INFO - Configuration loaded
+2026-01-04 05:26:03,119 - INFO - Research enabled: True
+2026-01-04 05:26:03,120 - INFO - Email generation enabled: True
+2026-01-04 05:26:03,121 - INFO - Email template: Consultative
+2026-01-04 05:26:03,121 - INFO - Email tone: professional
+2026-01-04 05:26:03,122 - INFO - ======================================================================
+2026-01-04 05:26:03,122 - INFO - Connecting to Google Sheets...
+2026-01-04 05:26:03,282 - INFO - Successfully authorized with Google
+2026-01-04 05:26:03,283 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 05:26:07,149 - INFO - Successfully connected to sheet
+2026-01-04 05:26:07,365 - INFO - Found 1 total rows
+2026-01-04 05:26:07,366 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 05:26:07,367 - INFO - Row 2: Already processed, skipping
+2026-01-04 05:26:07,368 - INFO - 
+======================================================================
+2026-01-04 05:26:07,369 - INFO - Sales Agent Finished!
+2026-01-04 05:26:07,371 - INFO - Summary: Processed=0, Skipped=1, Errors=0
+2026-01-04 05:26:07,372 - INFO - ======================================================================
+2026-01-04 05:27:31,759 - INFO - Configuration loaded from config.json
+2026-01-04 05:27:32,318 - INFO - ======================================================================
+2026-01-04 05:27:32,318 - INFO - Sales Agent Starting...
+2026-01-04 05:27:32,319 - INFO - Configuration loaded
+2026-01-04 05:27:32,320 - INFO - Research enabled: True
+2026-01-04 05:27:32,320 - INFO - Email generation enabled: True
+2026-01-04 05:27:32,321 - INFO - Email template: partnership
+2026-01-04 05:27:32,322 - INFO - Email tone: professional
+2026-01-04 05:27:32,322 - INFO - ======================================================================
+2026-01-04 05:27:32,323 - INFO - Connecting to Google Sheets...
+2026-01-04 05:27:32,386 - INFO - Successfully authorized with Google
+2026-01-04 05:27:32,386 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 05:27:35,049 - INFO - Successfully connected to sheet
+2026-01-04 05:27:35,262 - INFO - Found 1 total rows
+2026-01-04 05:27:35,263 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 05:27:35,264 - INFO - Row 2: Already processed, skipping
+2026-01-04 05:27:35,264 - INFO - 
+======================================================================
+2026-01-04 05:27:35,265 - INFO - Sales Agent Finished!
+2026-01-04 05:27:35,266 - INFO - Summary: Processed=0, Skipped=1, Errors=0
+2026-01-04 05:27:35,267 - INFO - ======================================================================
+2026-01-04 05:27:50,909 - INFO - Configuration loaded from config.json
+2026-01-04 05:27:51,633 - INFO - ======================================================================
+2026-01-04 05:27:51,641 - INFO - Sales Agent Starting...
+2026-01-04 05:27:51,643 - INFO - Configuration loaded
+2026-01-04 05:27:51,645 - INFO - Research enabled: True
+2026-01-04 05:27:51,649 - INFO - Email generation enabled: True
+2026-01-04 05:27:51,655 - INFO - Email template: partnership
+2026-01-04 05:27:51,657 - INFO - Email tone: professional
+2026-01-04 05:27:51,659 - INFO - ======================================================================
+2026-01-04 05:27:51,660 - INFO - Connecting to Google Sheets...
+2026-01-04 05:27:51,766 - INFO - Successfully authorized with Google
+2026-01-04 05:27:51,766 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 05:27:54,389 - INFO - Successfully connected to sheet
+2026-01-04 05:27:54,620 - INFO - Found 1 total rows
+2026-01-04 05:27:54,620 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 05:27:54,621 - INFO - Processing: shailesh Hon from TechScoer
+2026-01-04 05:27:54,621 - INFO - Researching company: TechScoer
+2026-01-04 05:28:03,101 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:28:03,125 - INFO - Generating email for shailesh Hon
+2026-01-04 05:28:09,787 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:28:09,789 - INFO - Email generated successfully for shailesh Hon
+2026-01-04 05:28:12,802 - INFO - 
+======================================================================
+2026-01-04 05:28:12,805 - INFO - Sales Agent Finished!
+2026-01-04 05:28:12,806 - INFO - Summary: Processed=1, Skipped=0, Errors=0
+2026-01-04 05:28:12,807 - INFO - ======================================================================
+2026-01-04 05:29:20,889 - INFO - Configuration loaded from config.json
+2026-01-04 05:29:21,479 - INFO - ======================================================================
+2026-01-04 05:29:21,480 - INFO - Sales Agent Starting...
+2026-01-04 05:29:21,480 - INFO - Configuration loaded
+2026-01-04 05:29:21,481 - INFO - Research enabled: True
+2026-01-04 05:29:21,481 - INFO - Email generation enabled: True
+2026-01-04 05:29:21,481 - INFO - Email template: Brief
+2026-01-04 05:29:21,482 - INFO - Email tone: professional
+2026-01-04 05:29:21,482 - INFO - ======================================================================
+2026-01-04 05:29:21,483 - INFO - Connecting to Google Sheets...
+2026-01-04 05:29:21,556 - INFO - Successfully authorized with Google
+2026-01-04 05:29:21,557 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 05:29:24,175 - INFO - Successfully connected to sheet
+2026-01-04 05:29:24,833 - INFO - Found 1 total rows
+2026-01-04 05:29:24,834 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 05:29:24,834 - INFO - Processing: shailesh Hon from TechScoer
+2026-01-04 05:29:24,834 - INFO - Researching company: TechScoer
+2026-01-04 05:29:33,774 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:29:33,791 - INFO - Generating email for shailesh Hon
+2026-01-04 05:29:40,596 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 05:29:40,600 - INFO - Email generated successfully for shailesh Hon
+2026-01-04 05:29:44,032 - INFO - 
+======================================================================
+2026-01-04 05:29:44,032 - INFO - Sales Agent Finished!
+2026-01-04 05:29:44,034 - INFO - Summary: Processed=1, Skipped=0, Errors=0
+2026-01-04 05:29:44,035 - INFO - ======================================================================
+2026-01-04 16:56:25,899 - INFO - Configuration loaded from config.json
+2026-01-04 16:56:26,536 - INFO - ======================================================================
+2026-01-04 16:56:26,537 - INFO - Sales Agent Starting...
+2026-01-04 16:56:26,538 - INFO - Configuration loaded
+2026-01-04 16:56:26,539 - INFO - Research enabled: True
+2026-01-04 16:56:26,539 - INFO - Email generation enabled: True
+2026-01-04 16:56:26,539 - INFO - Email template: Brief
+2026-01-04 16:56:26,539 - INFO - Email tone: professional
+2026-01-04 16:56:26,540 - INFO - ======================================================================
+2026-01-04 16:56:26,540 - INFO - Connecting to Google Sheets...
+2026-01-04 16:56:26,613 - INFO - Successfully authorized with Google
+2026-01-04 16:56:26,614 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 16:56:30,751 - INFO - Successfully connected to sheet
+2026-01-04 16:56:31,492 - INFO - Found 1 total rows
+2026-01-04 16:56:31,493 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 16:56:31,493 - INFO - Row 2: Already processed, skipping
+2026-01-04 16:56:31,494 - INFO - 
+======================================================================
+2026-01-04 16:56:31,494 - INFO - Sales Agent Finished!
+2026-01-04 16:56:31,494 - INFO - Summary: Processed=0, Skipped=1, Errors=0
+2026-01-04 16:56:31,495 - INFO - ======================================================================
+2026-01-04 16:56:51,167 - INFO - Configuration loaded from config.json
+2026-01-04 16:56:52,103 - INFO - ======================================================================
+2026-01-04 16:56:52,104 - INFO - Sales Agent Starting...
+2026-01-04 16:56:52,104 - INFO - Configuration loaded
+2026-01-04 16:56:52,105 - INFO - Research enabled: True
+2026-01-04 16:56:52,105 - INFO - Email generation enabled: True
+2026-01-04 16:56:52,106 - INFO - Email template: Brief
+2026-01-04 16:56:52,106 - INFO - Email tone: professional
+2026-01-04 16:56:52,107 - INFO - ======================================================================
+2026-01-04 16:56:52,108 - INFO - Connecting to Google Sheets...
+2026-01-04 16:56:52,181 - INFO - Successfully authorized with Google
+2026-01-04 16:56:52,182 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 16:56:56,359 - INFO - Successfully connected to sheet
+2026-01-04 16:56:57,094 - INFO - Found 1 total rows
+2026-01-04 16:56:57,095 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 16:56:57,095 - INFO - Processing: shailesh Hon from TechScoer
+2026-01-04 16:56:57,095 - INFO - Researching company: TechScoer
+2026-01-04 16:57:06,235 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 16:57:06,274 - INFO - Generating email for shailesh Hon
+2026-01-04 16:57:13,681 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 16:57:13,683 - INFO - Email generated successfully for shailesh Hon
+2026-01-04 16:57:15,280 - INFO - [SUCCESS] Completed: shailesh Hon
+2026-01-04 16:57:17,282 - INFO - 
+======================================================================
+2026-01-04 16:57:17,282 - INFO - Sales Agent Finished!
+2026-01-04 16:57:17,282 - INFO - Summary: Processed=1, Skipped=0, Errors=0
+2026-01-04 16:57:17,282 - INFO - ======================================================================
+2026-01-04 17:09:48,104 - INFO - Configuration loaded from config.json
+2026-01-04 17:09:48,677 - INFO - Created analytics directory: analytics
+2026-01-04 17:09:48,678 - INFO - Analytics tracking started for run: 20260104_170948
+2026-01-04 17:09:48,678 - INFO - ======================================================================
+2026-01-04 17:09:48,679 - INFO - Sales Agent Starting...
+2026-01-04 17:09:48,679 - INFO - Research enabled: True
+2026-01-04 17:09:48,680 - INFO - Email generation enabled: True
+2026-01-04 17:09:48,680 - INFO - Email template: Brief
+2026-01-04 17:09:48,681 - INFO - Email tone: professional
+2026-01-04 17:09:48,681 - INFO - ======================================================================
+2026-01-04 17:09:48,681 - INFO - Connecting to Google Sheets...
+2026-01-04 17:09:48,745 - INFO - Successfully authorized with Google
+2026-01-04 17:09:48,745 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 17:09:53,565 - INFO - Successfully connected to sheet
+2026-01-04 17:09:54,318 - INFO - Found 1 total rows
+2026-01-04 17:09:54,319 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 17:09:54,319 - INFO - Processing: shailesh Hon from TechScoer
+2026-01-04 17:09:54,320 - INFO - Researching company: TechScoer
+2026-01-04 17:10:02,205 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 17:10:02,238 - INFO - Generating email for shailesh Hon
+2026-01-04 17:10:08,880 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 17:10:08,881 - INFO - Email generated successfully for shailesh Hon
+2026-01-04 17:10:12,625 - INFO - 
+======================================================================
+2026-01-04 17:10:12,625 - INFO - Sales Agent Finished!
+2026-01-04 17:10:12,626 - INFO - Summary: Processed=1, Skipped=0, Errors=0
+2026-01-04 17:10:12,626 - INFO - ======================================================================
+2026-01-04 17:54:21,245 - INFO - Configuration loaded from config.json
+2026-01-04 17:54:21,816 - INFO - Analytics tracking started for run: 20260104_175421
+2026-01-04 17:54:21,817 - INFO - ======================================================================
+2026-01-04 17:54:21,817 - INFO - Sales Agent Starting...
+2026-01-04 17:54:21,817 - INFO - Research enabled: True
+2026-01-04 17:54:21,818 - INFO - Email generation enabled: True
+2026-01-04 17:54:21,818 - INFO - Email template: Brief
+2026-01-04 17:54:21,818 - INFO - Email tone: professional
+2026-01-04 17:54:21,819 - INFO - ======================================================================
+2026-01-04 17:54:21,819 - INFO - Connecting to Google Sheets...
+2026-01-04 17:54:21,880 - INFO - Successfully authorized with Google
+2026-01-04 17:54:21,881 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 17:54:24,578 - INFO - Successfully connected to sheet
+2026-01-04 17:54:24,814 - INFO - Found 1 total rows
+2026-01-04 17:54:24,814 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 17:54:24,814 - INFO - Row 2: Already processed, skipping
+2026-01-04 17:54:24,814 - INFO - 
+======================================================================
+2026-01-04 17:54:24,815 - INFO - Sales Agent Finished!
+2026-01-04 17:54:24,815 - INFO - Summary: Processed=0, Skipped=1, Errors=0
+2026-01-04 17:54:24,815 - INFO - ======================================================================
+2026-01-04 17:54:44,012 - INFO - Configuration loaded from config.json
+2026-01-04 17:54:44,545 - INFO - Analytics tracking started for run: 20260104_175444
+2026-01-04 17:54:44,546 - INFO - ======================================================================
+2026-01-04 17:54:44,546 - INFO - Sales Agent Starting...
+2026-01-04 17:54:44,547 - INFO - Research enabled: True
+2026-01-04 17:54:44,547 - INFO - Email generation enabled: True
+2026-01-04 17:54:44,548 - INFO - Email template: Brief
+2026-01-04 17:54:44,548 - INFO - Email tone: professional
+2026-01-04 17:54:44,548 - INFO - ======================================================================
+2026-01-04 17:54:44,549 - INFO - Connecting to Google Sheets...
+2026-01-04 17:54:44,615 - INFO - Successfully authorized with Google
+2026-01-04 17:54:44,615 - INFO - Looking for sheet named: SalesLeads
+2026-01-04 17:54:47,016 - INFO - Successfully connected to sheet
+2026-01-04 17:54:47,247 - INFO - Found 1 total rows
+2026-01-04 17:54:47,247 - INFO - 
+--- Processing Row 2 ---
+2026-01-04 17:54:47,248 - INFO - Processing: shailesh Hon from TechScoer
+2026-01-04 17:54:47,248 - INFO - Researching company: TechScoer
+2026-01-04 17:54:55,356 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 17:54:55,369 - INFO - Generating email for shailesh Hon
+2026-01-04 17:55:02,525 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-04 17:55:02,529 - INFO - Email generated successfully for shailesh Hon
+2026-01-04 17:55:03,086 - INFO - Completed: shailesh Hon
+2026-01-04 17:55:05,089 - INFO - 
+======================================================================
+2026-01-04 17:55:05,089 - INFO - Sales Agent Finished!
+2026-01-04 17:55:05,090 - INFO - Summary: Processed=1, Skipped=0, Errors=0
+2026-01-04 17:55:05,090 - INFO - ======================================================================

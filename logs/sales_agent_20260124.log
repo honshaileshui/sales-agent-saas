@@ -1,0 +1,11 @@
+2026-01-24 05:29:41,778 - INFO - [load_config] [load_config] Configuration loaded from config.json
+2026-01-24 12:38:17,147 - INFO - [load_config] [load_config] Configuration loaded from config.json
+2026-01-24 12:38:17,964 - INFO - [generate_personalized_email] [generate_personalized_email] Generating email for David Kim
+2026-01-24 12:38:39,511 - INFO - [generate_personalized_email] [generate_personalized_email] Generating email for David Kim
+2026-01-24 12:38:56,578 - INFO - [generate_personalized_email] [generate_personalized_email] Generating email for David Kim
+2026-01-24 12:39:15,107 - INFO - [generate_personalized_email] [generate_personalized_email] Generating email for David Kim
+2026-01-24 12:39:35,344 - INFO - [generate_personalized_email] [generate_personalized_email] Generating email for Michael Chen
+2026-01-24 12:42:33,774 - INFO - [generate_personalized_email] [generate_personalized_email] Generating email for Sarah Johnson
+2026-01-24 12:50:43,346 - INFO - [generate_personalized_email] [generate_personalized_email] Generating email for David Kim
+2026-01-24 12:54:58,530 - INFO - [load_config] [load_config] Configuration loaded from config.json
+2026-01-24 12:54:59,127 - INFO - [generate_personalized_email] [generate_personalized_email] Generating email for David Kim

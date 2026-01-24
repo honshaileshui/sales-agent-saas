@@ -1,0 +1,9 @@
+README.md
+salesagent.py
+setup.py
+salesagent_cli.egg-info/PKG-INFO
+salesagent_cli.egg-info/SOURCES.txt
+salesagent_cli.egg-info/dependency_links.txt
+salesagent_cli.egg-info/entry_points.txt
+salesagent_cli.egg-info/requires.txt
+salesagent_cli.egg-info/top_level.txt

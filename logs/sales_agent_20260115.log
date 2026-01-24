@@ -1,0 +1,18 @@
+2026-01-15 18:35:18,333 - INFO - [load_config] Configuration loaded from config.json
+2026-01-15 18:35:32,241 - INFO - [load_config] Configuration loaded from config.json
+2026-01-15 18:35:32,994 - INFO - [process_leads] Using user: Shailesh Hon (shailesh@test.com)
+2026-01-15 18:35:33,043 - INFO - [start_run] Analytics run started: 20260115_183532
+2026-01-15 18:35:33,044 - INFO - [process_leads] ======================================================================
+2026-01-15 18:35:33,044 - INFO - [process_leads] SalesAgent AI v2.0 - Starting...
+2026-01-15 18:35:33,044 - INFO - [process_leads] Database Mode: ENABLED
+2026-01-15 18:35:33,044 - INFO - [process_leads] Research: ENABLED
+2026-01-15 18:35:33,045 - INFO - [process_leads] Email Generation: ENABLED
+2026-01-15 18:35:33,045 - INFO - [process_leads] Template: Brief
+2026-01-15 18:35:33,045 - INFO - [process_leads] Tone: professional
+2026-01-15 18:35:33,045 - INFO - [process_leads] ======================================================================
+2026-01-15 18:35:33,061 - INFO - [process_leads] No unprocessed leads found.
+2026-01-15 18:35:33,061 - INFO - [process_leads] Tip: Import leads using import_leads_from_sheets() or add them via the API
+2026-01-15 18:35:33,071 - INFO - [end_run] Analytics run completed: 20260115_183532
+2026-01-15 18:40:30,986 - ERROR - [load_config] Invalid JSON in config file: Expecting ',' delimiter: line 7 column 5 (char 323)
+2026-01-15 18:40:31,952 - INFO - [connect_to_sheet] Connecting to Google Sheets...
+2026-01-15 18:40:31,952 - ERROR - [connect_to_sheet] Failed to connect to Google Sheets: [Errno 2] No such file or directory: 'credentials.json'

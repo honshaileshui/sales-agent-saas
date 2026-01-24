@@ -1,0 +1,31 @@
+2026-01-05 18:06:11,873 - INFO - Configuration loaded from config.json
+2026-01-05 18:06:13,411 - INFO - Analytics tracking started for run: 20260105_180613
+2026-01-05 18:06:13,412 - INFO - ======================================================================
+2026-01-05 18:06:13,412 - INFO - Sales Agent Starting...
+2026-01-05 18:06:13,414 - INFO - Research enabled: True
+2026-01-05 18:06:13,414 - INFO - Email generation enabled: True
+2026-01-05 18:06:13,415 - INFO - Email template: Brief
+2026-01-05 18:06:13,416 - INFO - Email tone: professional
+2026-01-05 18:06:13,416 - INFO - ======================================================================
+2026-01-05 18:06:13,418 - INFO - Connecting to Google Sheets...
+2026-01-05 18:06:13,592 - INFO - Successfully authorized with Google
+2026-01-05 18:06:13,592 - INFO - Looking for sheet named: SalesLeads
+2026-01-05 18:06:18,613 - INFO - Successfully connected to sheet
+2026-01-05 18:06:19,384 - INFO - Found 1 total rows
+2026-01-05 18:06:19,385 - INFO - 
+--- Processing Row 2 ---
+2026-01-05 18:06:19,385 - INFO - Processing: shailesh Hon from TechScoer
+2026-01-05 18:06:19,385 - INFO - Researching company: TechScoer
+2026-01-05 18:06:31,595 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-05 18:06:31,617 - INFO - Generating email for shailesh Hon
+2026-01-05 18:06:37,956 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-01-05 18:06:37,957 - INFO - Email generated successfully for shailesh Hon
+2026-01-05 18:06:39,667 - INFO - Completed: shailesh Hon
+2026-01-05 18:06:41,669 - INFO - Run analytics saved to: analytics/run_20260105_180613.json
+2026-01-05 18:06:41,671 - INFO - Summary statistics updated
+2026-01-05 18:06:41,671 - INFO - Analytics tracking completed for run: 20260105_180613
+2026-01-05 18:06:41,672 - INFO - 
+======================================================================
+2026-01-05 18:06:41,672 - INFO - Sales Agent Finished!
+2026-01-05 18:06:41,673 - INFO - Summary: Processed=1, Skipped=0, Errors=0
+2026-01-05 18:06:41,673 - INFO - ======================================================================
