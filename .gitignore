@@ -1,6 +1,5 @@
-﻿.venv/
-node_modules/
-__pycache__/
-*.pyc
+﻿
+Add these lines at the end:
+```
 .env
 config.json

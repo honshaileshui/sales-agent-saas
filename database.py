@@ -12,9 +12,12 @@ from psycopg2.extras import RealDictCursor, Json
 from contextlib import contextmanager
 from typing import Dict, List, Optional, Any
 from datetime import datetime
+from dotenv import load_dotenv
 import logging
 import json
 import os
+
+load_dotenv()
 
 logger = logging.getLogger(__name__)
 
@@ -27,7 +30,7 @@ DB_CONFIG = {
     'port': 5432,
     'database': 'salesagent_db',
     'user': 'postgres',
-    'password': 'Roger12@H'
+    'password': os.getenv('DB_PASSWORD', '')
 }
 
 # ============================================================================
