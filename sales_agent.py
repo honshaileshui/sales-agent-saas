@@ -629,9 +629,9 @@ Focus on: what they do, company scale/stage, recent notable events, and anything
     
     # Select model based on cost optimization setting
     if CONFIG['feature_flags'].get('cost_optimized', True):
-        model = CONFIG['model_settings'].get('research_model', 'claude-3-haiku-20240307')
+        model = CONFIG.get('model_routing', {}).get('research_summary', 'claude-3-haiku-20240307')
     else:
-        model = CONFIG['model_settings'].get('fallback_model', 'claude-sonnet-4-20250514')
+        model = CONFIG.get('model_routing', {}).get('email_generation', 'claude-sonnet-4-20250514')
     
     logger.info(f"[create_research_summary] Using {model} for research summary (cost-optimized)")
     
@@ -683,7 +683,10 @@ def generate_personalized_email(lead_data: Dict, research_data: Dict) -> Optiona
     }
     
     # Get research summary
-    research_summary = research_data.get('summary', f"Company: {lead_data['company']}")
+    if research_data and isinstance(research_data, dict):
+        research_summary = research_data.get('summary', f"Company: {lead_data['company']}")
+    else:
+        research_summary = f"Company: {lead_data.get('company', 'Unknown')}"
     
     prompt = f"""You are writing a sales outreach email. Generate BOTH a subject line and email body.
 
@@ -713,7 +716,7 @@ BODY:
 [Your email body here]"""
     
     # Always use Sonnet for email generation (quality matters here)
-    model = CONFIG['model_settings'].get('email_model', 'claude-sonnet-4-20250514')
+    model = CONFIG.get('model_routing', {}).get('email_generation', 'claude-sonnet-4-20250514')
     logger.info(f"[generate_personalized_email] Using {model} for email generation (best quality)")
     
     def generate():

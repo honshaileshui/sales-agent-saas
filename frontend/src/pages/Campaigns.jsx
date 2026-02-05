@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 import { 
   Plus, Search, Filter, Play, Pause, Trash2, Eye, 
   Users, Mail, Calendar, Target, ChevronRight, X, Check,
-  Megaphone, TrendingUp, AlertCircle
+  Megaphone, TrendingUp, AlertCircle, Clock
 } from 'lucide-react';
 import { campaignsAPI, leadsAPI } from '../api';
+import ScheduleForm from '../components/ScheduleForm';
 
 function Campaigns() {
   const [campaigns, setCampaigns] = useState([]);
@@ -252,6 +253,14 @@ function Campaigns() {
         <CampaignDetailModal 
           campaign={selectedCampaign}
           onClose={() => setShowDetailModal(false)}
+          onRefresh={async () => {
+            try {
+              const data = await campaignsAPI.getById(selectedCampaign.id);
+              setSelectedCampaign(data);
+            } catch (e) {
+              console.error('refresh failed', e);
+            }
+          }}
         />
       )}
     </div>
@@ -482,7 +491,32 @@ function CampaignWizard({ onClose, onComplete }) {
 }
 
 // Campaign Detail Modal
-function CampaignDetailModal({ campaign, onClose }) {
+function CampaignDetailModal({ campaign, onClose, onRefresh }) {
+  const [showScheduleForm, setShowScheduleForm] = useState(false);
+
+  const hasSchedule = !!(campaign.scheduled_start_date && campaign.scheduled_start_time);
+
+  const handleScheduleSaved = () => {
+    setShowScheduleForm(false);
+    if (onRefresh) onRefresh();
+  };
+
+  const formatDate = (dateStr) => {
+    if (!dateStr) return '';
+    const d = new Date(dateStr + 'T00:00:00');
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  };
+
+  const formatTime = (timeStr) => {
+    if (!timeStr) return '';
+    const parts = String(timeStr).split(':');
+    let h = parseInt(parts[0], 10);
+    const m = parts[1] || '00';
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    return `${h}:${m} ${ampm}`;
+  };
+
   const getStatusColor = (status) => {
     const colors = {
       draft: { bg: '#f3f4f6', text: '#6b7280' },
@@ -535,10 +569,70 @@ function CampaignDetailModal({ campaign, onClose }) {
               <span>{campaign.template || 'Default'}</span>
             </div>
             <div style={{display: 'flex', justifyContent: 'space-between', padding: '8px 0'}}>
-              <span style={{color: '#666'}}>Daily Limit</span>
-              <span>{campaign.settings?.daily_limit || 50} emails/day</span>
+              <span style={{color: '#666'}}>Status</span>
+              <span style={{textTransform: 'capitalize'}}>{campaign.status}</span>
             </div>
           </div>
+
+          {/* ===== SCHEDULE SECTION ===== */}
+          <div style={{marginTop: '24px'}}>
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px'}}>
+              <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+                <Clock size={18} color="#667eea" />
+                <span style={{fontSize: '16px', fontWeight: '600', color: '#1a1a2e'}}>Schedule</span>
+              </div>
+              {!showScheduleForm && (
+                <button
+                  onClick={() => setShowScheduleForm(true)}
+                  style={{
+                    padding: '8px 16px',
+                    background: hasSchedule ? 'transparent' : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                    color: hasSchedule ? '#667eea' : 'white',
+                    border: hasSchedule ? '1px solid #667eea' : 'none',
+                    borderRadius: '8px',
+                    fontSize: '13px',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                  }}
+                >
+                  {hasSchedule ? 'Edit Schedule' : 'Set Schedule'}
+                </button>
+              )}
+            </div>
+
+            {showScheduleForm ? (
+              <ScheduleForm
+                campaignId={campaign.id}
+                existingSchedule={hasSchedule ? campaign : undefined}
+                onSave={handleScheduleSaved}
+                onCancel={() => setShowScheduleForm(false)}
+              />
+            ) : hasSchedule ? (
+              <div style={{background: '#f0f4ff', borderRadius: '10px', padding: '14px 16px', display: 'flex', flexDirection: 'column', gap: '6px'}}>
+                <div style={{display: 'flex', justifyContent: 'space-between', fontSize: '14px'}}>
+                  <span style={{color: '#666'}}>📅 Start Date</span>
+                  <span style={{fontWeight: '600'}}>{formatDate(campaign.scheduled_start_date)}</span>
+                </div>
+                <div style={{display: 'flex', justifyContent: 'space-between', fontSize: '14px'}}>
+                  <span style={{color: '#666'}}>⏰ Start Time</span>
+                  <span style={{fontWeight: '600'}}>{formatTime(campaign.scheduled_start_time)}</span>
+                </div>
+                <div style={{display: 'flex', justifyContent: 'space-between', fontSize: '14px'}}>
+                  <span style={{color: '#666'}}>🌍 Timezone</span>
+                  <span style={{fontWeight: '600'}}>{campaign.timezone || 'UTC'}</span>
+                </div>
+                <div style={{display: 'flex', justifyContent: 'space-between', fontSize: '14px'}}>
+                  <span style={{color: '#666'}}>📊 Daily Limit</span>
+                  <span style={{fontWeight: '600'}}>{campaign.daily_send_limit || 50} emails/day</span>
+                </div>
+              </div>
+            ) : (
+              <div style={{background: '#f8f9fa', borderRadius: '10px', padding: '14px 16px', textAlign: 'center', color: '#888', fontSize: '14px'}}>
+                No schedule set. Click "Set Schedule" to configure.
+              </div>
+            )}
+          </div>
+          {/* ===== END SCHEDULE SECTION ===== */}
         </div>
         <div style={{padding: '16px 24px', borderTop: '1px solid #eee'}}>
           <button style={{width: '100%', padding: '12px', background: '#f5f5f5', border: 'none', borderRadius: '8px', cursor: 'pointer'}} onClick={onClose}>Close</button>

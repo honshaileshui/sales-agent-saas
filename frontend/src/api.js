@@ -1,13 +1,8 @@
-// api.js - FRESH BUILD
-// Clean API connector for SalesAgent AI
-// Version: 3.0
-
+// api.js - FIXED VERSION
 import axios from 'axios';
 
-// API Base URL - NO /api suffix, we add it per endpoint
 const API_BASE = 'http://localhost:8000';
 
-// Create axios instance
 const api = axios.create({
   baseURL: API_BASE,
   headers: {
@@ -16,7 +11,6 @@ const api = axios.create({
   timeout: 10000
 });
 
-// Add auth token to requests
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -25,27 +19,21 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Handle responses and errors
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     console.error('API Error:', error.response?.status, error.response?.data);
-    
-    // Only redirect to login for 401 errors on protected routes
     if (error.response?.status === 401) {
       const isAuthRoute = error.config?.url?.includes('/auth/');
       if (!isAuthRoute) {
         localStorage.removeItem('token');
-        // Don't auto-redirect, let the component handle it
       }
     }
     return Promise.reject(error);
   }
 );
 
-// ============================================================================
 // AUTH API
-// ============================================================================
 export const authAPI = {
   login: async (email, password) => {
     const response = await api.post('/auth/login', { email, password });
@@ -61,9 +49,7 @@ export const authAPI = {
   }
 };
 
-// ============================================================================
 // LEADS API
-// ============================================================================
 export const leadsAPI = {
   getAll: (params) => api.get('/api/leads', { params }),
   getById: (id) => api.get(`/api/leads/${id}`),
@@ -80,9 +66,7 @@ export const leadsAPI = {
   process: (id) => api.post(`/api/leads/${id}/process`)
 };
 
-// ============================================================================
 // EMAILS API
-// ============================================================================
 export const emailsAPI = {
   getAll: (params) => api.get('/api/emails', { params }),
   getById: (id) => api.get(`/api/emails/${id}`),
@@ -92,8 +76,6 @@ export const emailsAPI = {
   send: (id) => api.post(`/api/emails/${id}/send`),
   bulkSend: (ids) => api.post('/api/emails/send/bulk', { email_ids: ids }),
   testSend: (email) => api.post(`/api/emails/test-send?to_email=${email}`),
-  
-  // MISSING FUNCTIONS - ADD THESE:
   generate: (data) => api.post('/api/emails/generate', data),
   generateBulk: async (leadIds, campaignId = null, template = 'default') => {
     const results = [];
@@ -115,22 +97,55 @@ export const emailsAPI = {
   approveBulk: (ids) => api.post('/api/emails/approve/bulk', { email_ids: ids }),
 };
 
-// ============================================================================
-// CAMPAIGNS API
-// ============================================================================
+// CAMPAIGNS API (SINGLE DEFINITION - NO DUPLICATES!)
 export const campaignsAPI = {
-  getAll: (params) => api.get('/api/campaigns', { params }),
-  getById: (id) => api.get(`/api/campaigns/${id}`),
-  create: (data) => api.post('/api/campaigns', data),
-  update: (id, data) => api.put(`/api/campaigns/${id}`, data),
-  delete: (id) => api.delete(`/api/campaigns/${id}`),
-  start: (id) => api.post(`/api/campaigns/${id}/start`),
-  pause: (id) => api.post(`/api/campaigns/${id}/pause`)
+  getAll: async (params = {}) => {
+    const response = await api.get('/api/campaigns', { params });
+    return response.data;
+  },
+  
+  getById: async (id) => {
+    const response = await api.get(`/api/campaigns/${id}`);
+    return response.data;
+  },
+  
+  create: async (data) => {
+    const response = await api.post('/api/campaigns', data);
+    return response.data;
+  },
+  
+  update: async (id, data) => {
+    const response = await api.put(`/api/campaigns/${id}`, data);
+    return response.data;
+  },
+  
+  delete: async (id) => {
+    const response = await api.delete(`/api/campaigns/${id}`);
+    return response.data;
+  },
+  
+  start: async (id) => {
+    const response = await api.post(`/api/campaigns/${id}/start`);
+    return response.data;
+  },
+  
+  pause: async (id) => {
+    const response = await api.post(`/api/campaigns/${id}/pause`);
+    return response.data;
+  },
+  
+  getStats: async (id) => {
+    const response = await api.get(`/api/campaigns/${id}/stats`);
+    return response.data;
+  },
+  
+  addLeads: async (id, leadIds) => {
+    const response = await api.post(`/api/campaigns/${id}/leads`, { lead_ids: leadIds });
+    return response.data;
+  },
 };
 
-// ============================================================================
-// DASHBOARD API - Direct endpoint calls
-// ============================================================================
+// DASHBOARD API
 export const dashboardAPI = {
   getStats: () => api.get('/api/dashboard/stats'),
   getRecent: (limit = 10) => api.get('/api/dashboard/recent', { params: { limit } }),
@@ -138,17 +153,11 @@ export const dashboardAPI = {
   getFunnel: () => api.get('/api/dashboard/lead-funnel')
 };
 
-// ============================================================================
-// LEGACY FUNCTIONS - For existing Dashboard.jsx compatibility
-// ============================================================================
-
-// This function transforms the API response to match what Dashboard.jsx expects
+// LEGACY FUNCTIONS FOR DASHBOARD COMPATIBILITY
 api.getDashboardStats = async () => {
   try {
     const response = await api.get('/api/dashboard/stats');
     const data = response.data;
-    
-    // Return in the format Dashboard.jsx expects
     return {
       stats: data.stats || {
         total_leads: data.leads?.total || 0,
@@ -206,7 +215,4 @@ api.getEmailPerformance = async () => {
   }
 };
 
-// ============================================================================
-// EXPORT
-// ============================================================================
 export default api;

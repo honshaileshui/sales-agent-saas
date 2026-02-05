@@ -7,10 +7,46 @@ MENTOR NOTE: Pydantic models give you automatic validation, documentation,
 and type hints. This catches errors early and makes your API self-documenting.
 """
 
-from pydantic import BaseModel, EmailStr, Field
-from typing import Optional, List, Dict, Any
-from datetime import datetime
+from pydantic import BaseModel, EmailStr, Field, field_validator
+from typing import Optional, List, Dict, Any, Union
+from datetime import datetime, date, time
 from enum import Enum
+
+
+def _parse_scheduled_time(value):
+    """Parse various time formats to datetime.time"""
+    if isinstance(value, time):
+        return value
+    
+    if not isinstance(value, str):
+        raise ValueError("scheduled_start_time must be a string or time object")
+    
+    value = value.strip()
+    
+    # Handle ISO formats with Z or timezone
+    if 'T' in value:
+        # Remove timezone indicator
+        value_clean = value.replace('Z', '').split('+')[0].split('-')[0]
+        # Extract just the time part
+        time_part = value_clean.split('T')[1] if 'T' in value_clean else value_clean
+        value = time_part
+    
+    # Try parsing as time
+    try:
+        # Handle HH:MM:SS.microseconds
+        if '.' in value:
+            value = value.split('.')[0]  # Remove microseconds
+        
+        # Try HH:MM:SS
+        if value.count(':') == 2:
+            return datetime.strptime(value, '%H:%M:%S').time()
+        # Try HH:MM
+        elif value.count(':') == 1:
+            return datetime.strptime(value, '%H:%M').time()
+    except ValueError:
+        pass
+    
+    raise ValueError("scheduled_start_time must be HH:MM, HH:MM:SS, or ISO datetime (e.g. 2026-02-02T09:30:00 or 2026-02-02T09:30:00Z)")
 
 
 # ============================================================================
@@ -268,6 +304,42 @@ class CampaignResponse(BaseModel):
 class CampaignAddLeads(BaseModel):
     """Add leads to a campaign."""
     lead_ids: List[str]
+
+
+class CampaignScheduleSet(BaseModel):
+    """Set campaign schedule (POST). Accepts HH:MM, HH:MM:SS, or ISO datetime for scheduled_start_time."""
+    scheduled_start_date: date = Field(..., description="Start date (YYYY-MM-DD)")
+    scheduled_start_time: Union[str, time] = Field(
+        ...,
+        description="Start time: HH:MM, HH:MM:SS, or ISO datetime (e.g. 2026-02-02T09:30:00 or 2026-02-02T14:30:00+05:30)"
+    )
+    timezone: str = Field(default="UTC", max_length=50)
+    daily_send_limit: int = Field(default=50, ge=1, le=500, description="Max emails per day")
+
+    @field_validator("scheduled_start_time", mode="before")
+    @classmethod
+    def parse_scheduled_start_time(cls, v: Union[str, time]) -> time:
+        if v is None:
+            raise ValueError("scheduled_start_time is required")
+        return _parse_scheduled_time(v)
+
+
+class CampaignScheduleUpdate(BaseModel):
+    """Update campaign schedule (PUT). Accepts HH:MM, HH:MM:SS, or ISO datetime for scheduled_start_time."""
+    scheduled_start_date: Optional[date] = None
+    scheduled_start_time: Optional[Union[str, time]] = Field(
+        None,
+        description="Start time: HH:MM, HH:MM:SS, or ISO datetime (timezone offset handled)"
+    )
+    timezone: Optional[str] = Field(None, max_length=50)
+    daily_send_limit: Optional[int] = Field(None, ge=1, le=500)
+
+    @field_validator("scheduled_start_time", mode="before")
+    @classmethod
+    def parse_scheduled_start_time(cls, v: Optional[Union[str, time]]) -> Optional[time]:
+        if v is None:
+            return None
+        return _parse_scheduled_time(v)
 
 
 # ============================================================================
