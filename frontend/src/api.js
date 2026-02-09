@@ -143,6 +143,32 @@ export const campaignsAPI = {
     const response = await api.post(`/api/campaigns/${id}/leads`, { lead_ids: leadIds });
     return response.data;
   },
+
+  // SCHEDULE ENDPOINTS - NEW!
+  setSchedule: async (id, scheduleData) => {
+    const response = await api.post(`/api/campaigns/${id}/schedule`, scheduleData);
+    return response.data;
+  },
+
+  updateSchedule: async (id, scheduleData) => {
+    const response = await api.put(`/api/campaigns/${id}/schedule`, scheduleData);
+    return response.data;
+  },
+
+  getSchedule: async (id) => {
+    const response = await api.get(`/api/campaigns/${id}/schedule`);
+    return response.data;
+  },
+
+  deleteSchedule: async (id) => {
+    const response = await api.delete(`/api/campaigns/${id}/schedule`);
+    return response.data;
+  },
+
+  getScheduled: async (upcomingOnly = true) => {
+    const response = await api.get('/api/campaigns/scheduled', { params: { upcoming_only: upcomingOnly } });
+    return response.data;
+  },
 };
 
 // DASHBOARD API

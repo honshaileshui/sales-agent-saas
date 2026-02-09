@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Calendar, Clock, Globe, Hash } from 'lucide-react';
-import api from '../api';
+
+const API_BASE = 'http://localhost:8000';
 
 const TIMEZONES = [
   { value: 'UTC', label: 'UTC' },
@@ -69,18 +70,24 @@ function ScheduleForm({ campaignId, existingSchedule, onSave, onCancel }) {
         scheduled_start_date: scheduledDate,
         scheduled_start_time: timeValue,
         timezone,
-        daily_send_limit: Number(dailyLimit),
+        daily_send_limit: dailyLimit,
       };
-      const response = await api.post(`/api/campaigns/${campaignId}/schedule`, body);
-      onSave?.(response.data);
-    } catch (err) {
-      // axios puts the response in err.response
-      const detail = err.response?.data?.detail;
-      let errorMsg = 'Failed to save schedule';
-      if (detail) {
-        errorMsg = Array.isArray(detail) ? detail.map(d => d.msg).join(', ') : detail;
+      const token = localStorage.getItem('token');
+      const response = await fetch(`${API_BASE}/api/campaigns/${campaignId}/schedule`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: token ? `Bearer ${token}` : '',
+        },
+        body: JSON.stringify(body),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(data.detail || (typeof data.detail === 'string' ? data.detail : 'Failed to save schedule'));
       }
-      setError(errorMsg);
+      onSave?.(data);
+    } catch (err) {
+      setError(err.message || 'Failed to save schedule.');
     } finally {
       setLoading(false);
     }
@@ -159,7 +166,7 @@ function ScheduleForm({ campaignId, existingSchedule, onSave, onCancel }) {
               onChange={(e) => setDailyLimit(Number(e.target.value) || 50)}
               style={styles.input}
             />
-            <span style={styles.hint}>1–500 emails per day</span>
+            <span style={styles.hint}>1â€“500 emails per day</span>
           </div>
 
           <div style={styles.actions}>
@@ -179,7 +186,7 @@ function ScheduleForm({ campaignId, existingSchedule, onSave, onCancel }) {
               {loading ? (
                 <>
                   <span style={styles.spinner} />
-                  Saving…
+                  Savingâ€¦
                 </>
               ) : (
                 'Save schedule'
