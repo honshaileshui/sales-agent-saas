@@ -152,6 +152,12 @@ async def get_campaign(
         "replies_received": campaign.get("replies_received", 0),
         "created_at": campaign["created_at"],
         "updated_at": campaign["updated_at"],
+        "scheduled_start_date": str(campaign["scheduled_start_date"]) if campaign.get("scheduled_start_date") else None,
+        "scheduled_start_time": str(campaign["scheduled_start_time"]) if campaign.get("scheduled_start_time") else None,
+        "timezone": campaign.get("timezone", "UTC"),
+        "daily_send_limit": campaign.get("daily_send_limit", 50),
+        "emails_sent_today": campaign.get("emails_sent_today", 0),
+        "last_send_date": str(campaign["last_send_date"]) if campaign.get("last_send_date") else None,
         "leads": [
             {
                 "id": str(l["id"]),

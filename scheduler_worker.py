@@ -25,7 +25,9 @@ import logging
 # SendGrid imports
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Email, To, Content
+from dotenv import load_dotenv
 
+load_dotenv()
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -52,8 +54,8 @@ def load_config():
         return {}
 
 CONFIG = load_config()
-SENDGRID_API_KEY = "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"
-SENDER_EMAIL = "shaileshon13@gmail.com" # Default sender
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY', '')
+SENDER_EMAIL = os.getenv('SENDER_EMAIL', 'shaileshon13@gmail.com')
 
 if not SENDGRID_API_KEY:
     logger.warning("[WARN] SendGrid API key not found in config.json!")
